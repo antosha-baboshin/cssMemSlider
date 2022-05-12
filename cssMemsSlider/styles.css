@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./assets/background.jpg);
+    background-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.wrapper {
+    width: 700px;
+	height: 350px;
+	margin: 100px auto 0;
+}
+
+.slider {
+    width: inherit;
+    height: inherit;
+	background-color: #ddd;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+input {
+    display: none;
+}
+
+.slides {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+.slide0 {
+    background-color: red;
+}
+.slide1 {
+    background-color: blue;
+}
+.slide2 {
+    background-color: green;
+}
+.slide3 {
+    background-color: yellow;
+}
+.wrapper .controls {
+	left: 50%;
+	margin-left: -98px;
+	position: absolute;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 8px;
+	margin: 25px 12px 0 16px;
+	position: relative;
+	width: 8px;
+	border-radius: 50%;
+}
+
+.wrapper label:after {
+	border: 2px solid red;
+	content: " ";
+	display: block;
+	height: 12px;
+	left: -4px;
+	position: absolute;
+	top: -4px;
+	width: 12px;
+	border-radius: 50%;
+}

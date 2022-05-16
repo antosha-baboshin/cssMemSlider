@@ -19,14 +19,14 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
-    width: 45vw;
+    width: 43.75em;
 	height: auto;
 }
 
 .slider {
     width: inherit;
 	background-color: aquamarine;
-    height: 50vh;
+    height: 21.9em;
 	overflow: hidden;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 }
@@ -150,10 +150,10 @@ label:hover {
  
 @media (max-width: 768px) {
 	.wrapper {
-		width: 65vw;
+		width: 31.25em;
 	}
 	.slider {
-		height: 50vh;
+		height: 15em;
 	}
 	.underslider {
 		flex-direction: column-reverse;
@@ -167,5 +167,14 @@ label:hover {
 	}
 	.textcontent {
 		width: 100%;
+	}
+	.slides {
+		transform: scale(1.1);
+	}
+	#slide0:checked ~ .slider > .slide0,
+	#slide1:checked ~ .slider > .slide1,
+	#slide2:checked ~ .slider > .slide2,
+	#slide3:checked ~ .slider > .slide3 {
+		transform: scale(1);
 	}
 } 

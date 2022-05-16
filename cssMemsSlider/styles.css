@@ -12,22 +12,23 @@ body {
     background-image: url(./assets/background.jpg);
     background-size: 100%;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
-    width: 700px;
+	gap: 1em;
+    width: 45vw;
 	height: auto;
 }
 
 .slider {
     width: inherit;
-    height: 350px;
+	background-color: aquamarine;
+    height: 50vh;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 }
 
 input {
@@ -76,15 +77,15 @@ input {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 50px;
-	min-width: 300px;
+	height: 3em;
+	width: 30em;
 	background-color: antiquewhite;
 }
 
 .text {
 	position: absolute;
 	opacity: 0;
-	font-size: 20px;
+	font-size: 1.5em;
 	transition: opacity ease-in-out 0.5s;
 }
 
@@ -100,16 +101,16 @@ input {
 	align-self: center;
 	justify-content: space-around;
 	align-items: center;
-	width: 200px;
-	height: 50px;
-	margin-right: 20px;
+	width: auto;
+	height: 3em;
+	margin-right: 1em;
 }
 .wrapper label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 40px;
-	height: 40px;
+	width: 2.5em;
+	height: 2.5em;
 	position: relative;
 	border-radius: 50%;
 	transition: all ease-in-out 0.5s;
@@ -120,48 +121,51 @@ label:hover {
 	cursor: pointer;
 }
 
-.wrapper label:hover:after {
+.wrapper label:hover .point {
 	border: 2px solid white;
 	background-color: white;
 	transition: 0.5s;
 }
 
-.wrapper label:after {
+.wrapper .point {
 	border: 2px solid black;
 	content: " ";
 	display: block;
-	height: 15px;
+	height: 1em;
 	position: absolute;
-	width: 15px;
+	width: 1em;
 	border-radius: 100%;
 }
 
-.wrapper label:hover label:after {
+.wrapper label:hover .point {
 	border: 2px solid white;
 }
 
-#slide0:checked ~ .underslider > .controls label:nth-of-type(1):after,
-#slide1:checked ~ .underslider > .controls label:nth-of-type(2):after,
-#slide2:checked ~ .underslider > .controls label:nth-of-type(3):after,
-#slide3:checked ~ .underslider > .controls label:nth-of-type(4):after {
+#slide0:checked ~ .underslider > .controls label:nth-of-type(1) > .point,
+#slide1:checked ~ .underslider > .controls label:nth-of-type(2) > .point,
+#slide2:checked ~ .underslider > .controls label:nth-of-type(3) > .point,
+#slide3:checked ~ .underslider > .controls label:nth-of-type(4) > .point {
 	background: red;
 }
  
 @media (max-width: 768px) {
 	.wrapper {
-		width: 500px;
+		width: 65vw;
 	}
 	.slider {
-		height: 250px;
+		height: 50vh;
 	}
 	.underslider {
 		flex-direction: column-reverse;
-		gap: 10px;
+		gap: 0.75em;
 	}
-	.textcontent {
-		height: 50px;
+	.text {
+		font-size: 1em;
 	}
 	.wrapper .controls {
-		margin-right: 0px;
+		margin-right: 0;
+	}
+	.textcontent {
+		width: 100%;
 	}
 } 

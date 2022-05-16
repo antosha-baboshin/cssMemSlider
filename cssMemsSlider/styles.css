@@ -5,6 +5,8 @@
 }
 
 body {
+	display: flex;
+	justify-content: center;
     background-image: url(./assets/background.jpg);
     background-size: 100%;
     font-family: 'Roboto', sans-serif;
@@ -12,17 +14,19 @@ body {
 }
 
 .wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
     width: 700px;
-	height: 350px;
-	margin: 100px auto 0;
+	height: auto;
+	margin: 100px 0 40px;
 }
 
 .slider {
     width: inherit;
-    height: inherit;
-	background-color: #ddd;
+    height: 350px;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 input {
@@ -33,6 +37,10 @@ input {
     position: absolute;
     width: inherit;
     height: inherit;
+	opacity: 0;
+	z-index: 0;
+	transform: scale(1.5);
+	transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
 }
 .slide0 {
     background-color: red;
@@ -46,20 +54,47 @@ input {
 .slide3 {
     background-color: yellow;
 }
-.wrapper .controls {
-	left: 50%;
-	margin-left: -98px;
-	position: absolute;
+
+#slide0:checked ~ .slider > .slide0,
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3 {
+	opacity: 1;
+	z-index: 1;
+	transform: scale(1);
 }
 
+.underslider {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 20px;
+}
+
+span {
+	font-size: 20px;
+}
+
+.wrapper .controls {
+	display: flex;
+	align-self: center;
+	justify-content: space-around;
+	align-items: center;
+	width: 150px;
+	height: 50px;
+	border: 1px solid blue;
+}
 .wrapper label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	cursor: pointer;
-	display: inline-block;
-	height: 8px;
-	margin: 25px 12px 0 16px;
-	position: relative;
+	height: 25px;
 	width: 8px;
+	height: 8px;
+	position: relative;
 	border-radius: 50%;
+	transition: background ease-in-out 0.5s;
 }
 
 .wrapper label:after {
@@ -67,9 +102,15 @@ input {
 	content: " ";
 	display: block;
 	height: 12px;
-	left: -4px;
 	position: absolute;
-	top: -4px;
 	width: 12px;
 	border-radius: 50%;
+}
+
+.wrapper label:hover, 
+#slide0:checked ~ .controls label:nth-of-type(1),
+#slide1:checked ~ .controls label:nth-of-type(2),
+#slide2:checked ~ .controls label:nth-of-type(3),
+#slide3:checked ~ .controls label:nth-of-type(4) {
+	background: red;
 }

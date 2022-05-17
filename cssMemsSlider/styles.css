@@ -81,16 +81,20 @@ input {
 }
 
 .text {
-	position: absolute;
+	width: 0;
+	overflow-y: hidden;
+	height: 1.5em;
 	opacity: 0;
 	font-size: 1.5em;
-	transition: opacity ease-in-out 0.5s;
+	transition: all ease-in-out 0.3s;
+	text-align: center;
 }
 
 #slide0:checked ~ .underslider > .textcontent > #text0,
 #slide1:checked ~ .underslider > .textcontent > #text1,
 #slide2:checked ~ .underslider > .textcontent > #text2,
 #slide3:checked ~ .underslider > .textcontent > #text3 {
+	width: 100%;
 	opacity: 1;
 }
 

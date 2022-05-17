@@ -27,7 +27,7 @@ body {
 .slider {
 	display: flex;
 	background-color: black;
-    height: 27em;
+    min-height: 28vw;
 	overflow: hidden;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 }
@@ -159,7 +159,7 @@ label:hover {
 		width: 60%;
 	}
 	.slider {
-		height: 14em;
+		height: 28vw;
 		align-items: center;
 	}
 	.underslider {

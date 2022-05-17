@@ -139,7 +139,6 @@ label:hover {
 	content: " ";
 	display: block;
 	height: 1em;
-	position: absolute;
 	width: 1em;
 	border-radius: 100%;
 }
